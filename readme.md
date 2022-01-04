@@ -1,7 +1,17 @@
 # Home Git Server
 
 ## 1. Create and run Docker container
-Create or copy yuor public key in to file ./id_rsa.pub, and run:
+Create or copy yuor public key in to file ./id_rsa.pub.
+Use ED25519 algorithm, for Windows:
+```
+ssh-keygen -q -t ed25519 -C homegitserver -N "" -f "%USERPROFILE%\.ssh\id_rsa"
+```
+for Linux:
+```
+ssh-keygen -q -t ed25519 -C homegitserver -N "" -f ~/.ssh/id_rsa
+```
+
+Run for build image and run container:
 ```
 docker-compose up --build
 ```
@@ -9,6 +19,11 @@ Connect to container by root:
 ```
 docker exec -it homegitserver-container /bin/bash
 ```
+
+
+## 2. Testing of Git server
+Open other terminal window.
+
 Reset host for first connect in file known_hosts, use:
 ```
 ssh-keygen -R [localhost]:8822
@@ -29,9 +44,6 @@ Offending RSA key in /c/Users/user1/.ssh/known_hosts:4
 RSA host key for [localhost]:8822 has changed and you have requested strict checking.
 Host key verification failed. 
 ```
-
-## 2. Testing of Git server
-Open other terminal window.
 View repository list on Git-server
 ```
 ssh -p 8822 git@localhost ls -lA /git/repos/
