@@ -1,0 +1,8 @@
+id_rsa
+id_rsa.pub
+repo1/
+homegitserver-container/
+git/
+*.bak
+old/
+*.tar
