@@ -5,6 +5,10 @@ Create or copy yuor public key in to file ./id_rsa.pub, and run:
 ```
 docker-compose up --build
 ```
+Connect to container by root:
+```
+docker exec -it homegitserver-container /bin/bash
+```
 
 ## 2. Testing of Git server
 Open other terminal window.
