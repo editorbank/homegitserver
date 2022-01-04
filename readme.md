@@ -34,7 +34,7 @@ docker export -o homegitserver-container.tar homegitserver-container
 ```
 or git home dir only
 ```
-docker export homegitserver-container | tar -xf - git/*
+docker export homegitserver-container | tar -xf - --wildcards git/*
 ```
 
 ## 4. Clean

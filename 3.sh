@@ -1,2 +1,2 @@
 #!/bin/sh
-docker export homegitserver-container | tar -xf - git/* && ls -lA ./git
+docker export homegitserver-container | tar -xf - --wildcards git/* && ls -lA ./git

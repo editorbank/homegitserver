@@ -1,1 +1,1 @@
-docker export homegitserver-container | tar -xf - git/* && dir .\git
+docker export homegitserver-container | tar -xf - --wildcards git/* && dir .\git
