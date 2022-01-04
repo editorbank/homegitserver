@@ -5,20 +5,44 @@ Create or copy yuor public key in to file ./id_rsa.pub, and run:
 ```
 docker-compose up --build
 ```
+Connect to container by root:
+```
+docker exec -it homegitserver-container /bin/bash
+```
+Reset host for first connect in file known_hosts, use:
+```
+ssh-keygen -R [localhost]:8822
+```
+Otherwise, errors may occur:
+```
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+It is also possible that a host key has just been changed.
+The fingerprint for the RSA key sent by the remote host is
+SHA256:02xN0mD6Xd0XXIjZjRkUBIapKMXjeVW5HVy5StxzYMk.
+Please contact your system administrator.
+Add correct host key in /c/Users/user1/.ssh/known_hosts to get rid of this message.
+Offending RSA key in /c/Users/user1/.ssh/known_hosts:4
+RSA host key for [localhost]:8822 has changed and you have requested strict checking.
+Host key verification failed. 
+```
 
 ## 2. Testing of Git server
 Open other terminal window.
 View repository list on Git-server
 ```
-ssh -p 8822 git@localhost ls -lA
+ssh -p 8822 git@localhost ls -lA /git/repos/
 ```
 Create new repository
 ```
-ssh -p 8822 git@localhost git init --bare repo1.git
+ssh -p 8822 git@localhost git init --bare /git/repos/repo1.git
 ```
 Clone new repository in to local folder and test works.
 ```
-git clone ssh://git@localhost:8822/~/repo1.git
+git clone ssh://git@localhost:8822/git/repos/repo1.git
 cd repo1
 echo Hello, Home Git server!>readme.md
 git add readme.md

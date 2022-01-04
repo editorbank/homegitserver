@@ -1,6 +1,7 @@
 id_rsa
 id_rsa.pub
 repo1/
+git-repos/
 homegitserver-container/
 git/
 *.bak

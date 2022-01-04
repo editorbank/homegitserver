@@ -6,3 +6,5 @@ services:
     image: homegitserver-image
     ports:
       - 8822:22
+    volumes:
+      - ./git-repos:/git/repos
