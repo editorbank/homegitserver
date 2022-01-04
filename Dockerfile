@@ -1,5 +1,6 @@
 FROM alpine
 
+VOLUME /git/repos
 RUN apk add --no-cache git openssh-server openssh-client && \
  /usr/bin/ssh-keygen -A && \
  adduser -h /git -D git && \
