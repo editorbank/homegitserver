@@ -43,3 +43,9 @@ docker export homegitserver-container | tar -xf - git/*
  docker rm homegitserver-container
  docker rmi homegitserver-image
 ```
+
+## Links
+* [https://habr.com/ru/company/ruvds/blog/359216/]
+* [http://cccp-blog.com/koding/sozdayom-git-server-svoimi-rukami]
+* [https://lumpics.ru/installation-ssh-server-in-ubuntu/]
+* [https://www.garron.me/en/linux/sshd-no-hostkeys-available-exiting.html]
