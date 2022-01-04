@@ -49,3 +49,4 @@ docker export homegitserver-container | tar -xf - --wildcards git/*
 * [http://cccp-blog.com/koding/sozdayom-git-server-svoimi-rukami]
 * [https://lumpics.ru/installation-ssh-server-in-ubuntu/]
 * [https://www.garron.me/en/linux/sshd-no-hostkeys-available-exiting.html]
+* [https://www.openssh.com/txt/release-8.8]
