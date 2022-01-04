@@ -7,6 +7,7 @@ RUN apk add --no-cache git openssh-server openssh-client && \
  \
  echo OK
 
+COPY sshd_config /etc/ssh/sshd_config
 COPY id_rsa.pub /etc/ssh/.ssh/authorized_keys
 COPY id_rsa.pub /git/.ssh/authorized_keys
 
