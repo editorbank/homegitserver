@@ -1,0 +1,1 @@
+docker export homegitserver-container | tar -xf - git/* && dir .\git

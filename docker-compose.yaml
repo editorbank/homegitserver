@@ -1,0 +1,8 @@
+version: '3'
+services:
+  homegitserver-service:
+    build: .
+    container_name: homegitserver-container
+    image: homegitserver-image
+    ports:
+      - 8822:22
