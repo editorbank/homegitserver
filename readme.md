@@ -1,19 +1,19 @@
 # Home Git Server
 
 ## 1. Create and run Docker container
-Create or copy yuor public key in to file ./id_rsa.pub.
+Create or copy yuor public key in to file ./id_ed25519.pub.
 Use ED25519 algorithm, for Windows:
 ```
-ssh-keygen -q -t ed25519 -C homegitserver -N "" -f "%USERPROFILE%\.ssh\id_rsa"
+ssh-keygen -q -t ed25519 -C %USERNAME% -N "" -f "%USERPROFILE%\.ssh\id_ed25519"
 ```
 for Linux:
 ```
-ssh-keygen -q -t ed25519 -C homegitserver -N "" -f ~/.ssh/id_rsa
+ssh-keygen -q -t ed25519 -C $USER -N "" -f ~/.ssh/id_ed25519
 ```
 
 Run for build image and run container:
 ```
-docker-compose up --build
+docker-compose up --build -d
 ```
 Connect to container by root:
 ```

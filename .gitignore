@@ -1,5 +1,5 @@
-id_rsa
-id_rsa.pub
+id_*
+id_*.pub
 repo1/
 git-repos/
 homegitserver-container/
@@ -7,3 +7,4 @@ git/
 *.bak
 old/
 *.tar
+*.tmp

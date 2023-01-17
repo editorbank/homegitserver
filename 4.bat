@@ -1,4 +1,4 @@
-:#!/bin/sh
-docker-compose down
-docker rm homegitserver-container
-docker rmi homegitserver-image
+
+docker rm -f homegitserver-container
+docker rmi -f homegitserver-image
+ssh-keygen -R [localhost]:8822

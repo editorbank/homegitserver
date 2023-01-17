@@ -5,6 +5,6 @@ services:
     container_name: homegitserver-container
     image: homegitserver-image
     ports:
-      - 8822:22
-    volumes:
-      - ./git-repos:/git/repos
+      - '8822:22'
+    #volumes:
+      #- ./git-repos:/home/git/repos
