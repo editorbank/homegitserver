@@ -2,5 +2,6 @@
 repo_name=$1
 [ -z ${repo_name} ] && echo Use: $0 \<repo_name\[.git\]\> && exit 101
 [ "${repo_name: -4}" != ".git" ] && repo_name=${repo_name}.git
+[ "${repo_name: 0:1}" != "/" ] && repo_name=/repos/${repo_name}
 echo Make repo ${repo_name} ...
-git init -q --bare ${repo_name} && cd ${repo_name} && git config receive.denyCurrentBranch warn
+git init -q --bare ${repo_name} && cd ${repo_name} && git config receive.denyCurrentBranch warn && echo OK.

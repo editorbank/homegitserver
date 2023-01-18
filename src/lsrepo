@@ -1,2 +1,4 @@
 #!/bin/sh
-ls -1 $1 |grep ".git"|sort
+repo_name=$1
+[ -z ${repo_name} ] && repo_name=/repos/
+ls -1 ${repo_name} |grep ".git"|sort
