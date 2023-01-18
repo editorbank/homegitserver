@@ -5,6 +5,8 @@ ssh -p 8822 git@localhost mkrepo repos/repo1.git
 git clone ssh://git@localhost:8822/~/repos/repo1.git
 if [ -d ./repo1 ] ; then
   cd repo1
+  git config user.email ""
+  git config user.user $USER
   echo Hello, Home Git server!>readme.md
   git add readme.md && \
   git commit -m "First commit" && \
