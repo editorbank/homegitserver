@@ -17,7 +17,7 @@ docker-compose up --build -d
 ```
 Connect to container by root:
 ```
-docker exec -it homegitserver-container /bin/bash
+docker exec -it homegitserver-container /bin/sh
 ```
 
 
@@ -64,20 +64,17 @@ cd ..
 ```
 
 ## 3. Export repository from container
-Export all container to tar archive
+The `/repos` folder in the container will be mapped to the local folder `./git-repos` and it can be backuped in any convenient way.
+
+If the volume attachment is not used, the repositories can be exported from the image.
 ```
-docker export -o homegitserver-container.tar homegitserver-container
-```
-or git home dir only
-```
-docker export homegitserver-container | tar -xf - --wildcards git/*
+docker export homegitserver-container | tar -xf - --wildcards repos/*
 ```
 
 ## 4. Clean
 ```
- docker-compose down
- docker rm homegitserver-container
- docker rmi homegitserver-image
+ docker rm -f homegitserver-container
+ docker rmi -f homegitserver-image
 ```
 
 ## Links

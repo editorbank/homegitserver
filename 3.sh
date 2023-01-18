@@ -1,3 +1,5 @@
 #!
-docker export homegitserver-container -o homegitserver-container.tar
-#docker export homegitserver-container | tar -xf - --wildcards repos/* && ls -lA ./repos
+[ ! -d ./tmp ] && mkdir ./tmp
+cd ./tmp
+#docker export homegitserver-container -o homegitserver-container.tar
+docker export homegitserver-container | tar -xf - --wildcards repos/* && ls -lA ./repos
