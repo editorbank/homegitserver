@@ -66,9 +66,9 @@ cd ..
 ## 3. Export repository from container
 The `/repos` folder in the container will be mapped to the local folder `./git-repos` and it can be backuped in any convenient way.
 
-If the volume attachment is not used, the repositories can be exported from the image.
+If the volume attachment is not used, the repositories can be exported from the image. For example, by launching another container:
 ```
-docker export homegitserver-container | tar -xf - --wildcards repos/*
+docker run --rm --volumes-from homegitserver-container -v $PWD:/pwd busybox tar cvf /pwd/repos.$RANDOM.tar /repos
 ```
 
 ## 4. Clean
