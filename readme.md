@@ -46,15 +46,15 @@ Host key verification failed.
 ```
 View repository list on Git-server
 ```
-ssh -p 8822 git@localhost ls -lA /git/repos/
+ssh -p 8822 root@localhost lsrepo
 ```
 Create new repository
 ```
-ssh -p 8822 git@localhost git init --bare /git/repos/repo1.git
+ssh -p 8822 root@localhost mkrepo repo1.git
 ```
 Clone new repository in to local folder and test works.
 ```
-git clone ssh://git@localhost:8822/git/repos/repo1.git
+git clone ssh://root@localhost:8822/repos/repo1.git
 cd repo1
 echo Hello, Home Git server!>readme.md
 git add readme.md
